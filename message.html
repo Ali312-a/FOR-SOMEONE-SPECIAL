@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Special Message ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#a18cd1,#fbc2eb);
+    text-align:center;
+    color:white;
+    overflow:hidden;
+    opacity:0;
+    animation: fadeInPage 1.5s forwards;
+}
+
+@keyframes fadeInPage{
+    to{opacity:1;}
+}
+
+.message{
+    background: rgba(255,255,255,0.2);
+    padding:50px;
+    border-radius:25px;
+    backdrop-filter: blur(15px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+    animation: scaleUp 1s ease;
+}
+
+@keyframes scaleUp{
+    0%{transform:scale(0.8);}
+    100%{transform:scale(1);}
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.6;
+}
+
+/* Floating Hearts */
+.heart{
+    position:absolute;
+    color:#ff6b81;
+    font-size:20px;
+    animation: floatUp 4s linear infinite;
+    opacity:0.8;
+}
+
+@keyframes floatUp{
+    0%{transform: translateY(0) scale(1); opacity:0.8;}
+    50%{opacity:1; transform: translateY(-150px) scale(1.2);}
+    100%{transform: translateY(-300px) scale(0.8); opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="message">
+    <h1>For You 🌸</h1>
+    <p>
+        You are truly special.<br>
+        Your smile makes everything brighter ✨<br>
+        Never forget how amazing you are 💖
+    </p>
+</div>
+
+<script>
+// Create multiple floating hearts
+for(let i=0; i<15; i++){
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random()*100 + "%";
+    heart.style.fontSize = (15 + Math.random()*20) + "px";
+    heart.style.animationDuration = (3 + Math.random()*3) + "s";
+    heart.innerText = "❤";
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
